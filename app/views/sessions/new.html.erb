@@ -1,0 +1,12 @@
+<h1>Sign in</h1>
+<%= form_for :signin, method: "POST" do |f| %>
+  <p>
+  <%= f.label t("sessions.new.staff_mail_address") %><br />
+  <%= f.text_field :staff_mail_address %>
+  </p>
+  <p>
+  <%= f.label t("sessions.new.staff_login_password") %><br />
+  <%= f.password_field :staff_login_password %>
+  </p>
+  <%= f.submit t("sessions.new.submit") %>
+<% end %>

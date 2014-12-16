@@ -1,3 +1,4 @@
+=begin
 RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
@@ -20,3 +21,4 @@ RSpec.configure do |config|
   end
 
 end
+=end

@@ -1,0 +1,6 @@
+vi:
+  sessions:
+    new:
+      submit: "Đăng nhập"
+      staff_mail_address: "Địa chỉ Email"
+      staff_login_password: "Mật khẩu"

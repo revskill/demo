@@ -1,0 +1,6 @@
+<h3><%= t('admin.index.welcome') + "  " + current_staff.staff_name %></h3>
+<ul>
+	<%= @staffs.each do |staff| %>
+	<li><%= staff.staff_name %></li>
+	<% end %>
+</ul>
