@@ -1,4 +1,9 @@
 <h3><%= t('admin.index.welcome') + "  " + current_staff.staff_name %></h3>
+<% if flash.keys.any? %>
+  <% [:notice, :error].each do |t| %>
+    <%= flash[t] %>
+  <% end %>
+<% end %>
 <ul>
 	<%= @staffs.each do |staff| %>
 	<li><%= staff.staff_name %></li>

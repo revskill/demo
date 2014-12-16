@@ -4,3 +4,9 @@ vi:
       submit: "Đăng nhập"
       staff_mail_address: "Địa chỉ Email"
       staff_login_password: "Mật khẩu"
+    create:
+      notice: "Đăng nhập thành công"
+      error: "Đăng nhập không thành công, vui lòng thử lại"
+  admin:
+    index:
+      welcome: "Chào"

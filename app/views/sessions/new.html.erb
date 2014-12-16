@@ -1,4 +1,9 @@
 <h1>Sign in</h1>
+<% if flash.keys.any? %>
+  <% [:notice, :error].each do |t| %>
+    <%= flash[t] %>
+  <% end %>
+<% end %>
 <%= form_for :signin, method: "POST" do |f| %>
   <p>
   <%= f.label t("sessions.new.staff_mail_address") %><br />
