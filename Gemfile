@@ -33,6 +33,8 @@ end
 
 gem 'mysql2'
 gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+gem 'ransack'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

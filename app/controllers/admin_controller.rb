@@ -1,8 +1,7 @@
 class AdminController < ApplicationController
   before_filter :require_signin!
   def index
-    @staffs = StaffQuery.fetch_page params[:page]
+    @q, @staffs = StaffQuery.search params[:q], params[:page]
+    render :index
   end
-
- 
 end

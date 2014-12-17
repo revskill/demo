@@ -13,3 +13,10 @@ vi:
     index:
       welcome: "Chào"
       logout: "Đăng xuất"
+  views:
+    pagination:
+      first: "&laquo; Trang đầu tiên"
+      last: "Trang cuối &raquo;"
+      previous: "&lsaquo; Trang trước"
+      next: "Trang sau &rsaquo;"
+      truncate: "&hellip;"

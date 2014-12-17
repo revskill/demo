@@ -1,12 +1,19 @@
 <h3><%= t('admin.index.welcome') + "  " + current_staff.staff_name %></h3>
-<%= link_to t('admin.index.logout'), signout_path, method: :delete %>
+<%= link_to t('admin.index.logout'), signout_path %>
 <% if flash.keys.any? %>
   <% [:notice, :error].each do |t| %>
     <%= flash[t] %>
   <% end %>
 <% end %>
+
+<%= search_form_for @q, url: root_path do |f| %>
+  <%= f.search_field :staff_name %>
+  <%= f.search_field :mail_address %>
+  <%= f.submit '', :class => 'search_button' %>
+<% end %>
 <ul>
-	<%= @staffs.each_with_index do |staff, index| %>
+	<% @staffs.each_with_index do |staff, index| %>
 	<li><%= 'stt' + (index+1).to_s %>:<%= staff.salon.nil? ?  "" : staff.salon.salon_name %>, <%= staff.staff_name %>, <%= staff.mail_address %></li>
 	<% end %>
 </ul>
+<%= paginate @staffs, :theme => 'twitter-bootstrap-3' %>
