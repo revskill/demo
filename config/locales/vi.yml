@@ -7,6 +7,9 @@ vi:
     create:
       notice: "Đăng nhập thành công"
       error: "Đăng nhập không thành công, vui lòng thử lại"
+    destroy:
+      notice: "Đăng xuất thành công"
   admin:
     index:
       welcome: "Chào"
+      logout: "Đăng xuất"

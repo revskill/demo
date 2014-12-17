@@ -4,6 +4,7 @@ Demo::Application.routes.draw do
   root :to => 'admin#index'
   get '/signin' => 'sessions#new', :as => 'signin'
   post '/signin' => 'sessions#create', :as => 'signedin'
+  delete '/signout' => 'sessions#destroy', :as => 'signout'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

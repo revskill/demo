@@ -39,5 +39,5 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
-  RSpec.configure { |c| c.include ViewListSteps; }
+  RSpec.configure { |c| c.include ViewListSteps; c.include SignOutSteps;}
 end

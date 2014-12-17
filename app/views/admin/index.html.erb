@@ -1,4 +1,5 @@
 <h3><%= t('admin.index.welcome') + "  " + current_staff.staff_name %></h3>
+<%= link_to t('admin.index.logout'), signout_path, method: :delete %>
 <% if flash.keys.any? %>
   <% [:notice, :error].each do |t| %>
     <%= flash[t] %>
