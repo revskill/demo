@@ -6,7 +6,7 @@
   <% end %>
 <% end %>
 <ul>
-	<%= @staffs.each do |staff| %>
-	<li><%= staff.staff_name %></li>
+	<%= @staffs.each_with_index do |staff, index| %>
+	<li><%= 'stt' + (index+1).to_s %>:<%= staff.salon.nil? ?  "" : staff.salon.salon_name %>, <%= staff.staff_name %>, <%= staff.mail_address %></li>
 	<% end %>
 </ul>

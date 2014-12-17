@@ -21,16 +21,18 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'cancan'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
-  gem 'spork'
-  gem 'cancan'
+  gem 'spork'  
   gem 'capybara'
   gem 'database_cleaner'
   gem 'turnip'
+  gem 'rb-readline'
 end
 
 gem 'mysql2'
+gem 'kaminari'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
