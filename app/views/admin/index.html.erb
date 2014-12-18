@@ -5,10 +5,10 @@
     <%= flash[t] %>
   <% end %>
 <% end %>
-
-<%= search_form_for @q, url: root_path do |f| %>
-  <%= f.search_field :staff_name %>
-  <%= f.search_field :mail_address %>
+<%= paginate @staffs, :theme => 'twitter-bootstrap-3' %>
+<%= search_form_for @search, url: root_path do |f| %>
+  <%= f.search_field :staff_name_cont %>
+  <%= f.search_field :mail_address_cont %>
   <%= f.submit '', :class => 'search_button' %>
 <% end %>
 <ul>
@@ -16,4 +16,3 @@
 	<li><%= 'stt' + (index+1).to_s %>:<%= staff.salon.nil? ?  "" : staff.salon.salon_name %>, <%= staff.staff_name %>, <%= staff.mail_address %></li>
 	<% end %>
 </ul>
-<%= paginate @staffs, :theme => 'twitter-bootstrap-3' %>

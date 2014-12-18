@@ -5,6 +5,11 @@ Tính năng: Tìm kiếm và lọc
     Khi staff đã đăng nhập
     Và staff gõ tên ikoutest_staff và email dummy_ikoutest vào các ô tìm kiếm
     Thì kết quả sẽ hiện ra ikoutest_staff và email dummy_ikoutest
+
+  Tình huống: staff tìm kiếm theo tên
+    Khi staff đã đăng nhập
+    Và staff gõ tên ikoutest_staff vào ô tìm kiếm
+    Thì kết quả sẽ hiện ra ikoutest_staff và email dummy_ikoutest
 =end
 module SearchSteps
   step 'staff đã đăng nhập' do 
@@ -13,13 +18,18 @@ module SearchSteps
     fill_in :signin_staff_login_password, :with => 'dummy1'
     click_button 'Đăng nhập'
   end
-  step 'staff gõ tên ikoutest_staff và email dummy_ikoutest vào các ô tìm kiếm' do 
-    fill_in :q_staff_name, :with => 'ikoutest'
-    fill_in :q_mail_address, :with => 'dummy_ikoutest'
+  step 'staff gõ tên name_for_search và email dummysearch vào các ô tìm kiếm' do 
+    fill_in :q_staff_name_cont, :with => 'name_for_search'
+    fill_in :q_mail_address_cont, :with => 'dummysearch'
     page.find('.search_button').click
   end
-  step 'kết quả sẽ hiện ra ikoutest_staff và email dummy_ikoutest' do 
-    expect(page).to have_content 'ikoutest_staff'
-    expect(page).to have_content 'dummy_ikoutest'
+  step 'kết quả sẽ hiện ra name_for_search và email dummysearch' do 
+    expect(page).to have_content 'name_for_search'
+    expect(page).to have_content 'dummysearch'
   end
+  step 'staff gõ tên name_for_search vào ô tìm kiếm' do 
+    fill_in :q_staff_name_cont, :with => 'name_for_search'
+    page.find('.search_button').click
+  end
+
 end
