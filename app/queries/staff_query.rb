@@ -8,4 +8,9 @@ module StaffQuery
   	staffs = qu.result.includes(:salon).page page
   	return qu, staffs
   end
+
+  def self.find id
+  	return nil if id.nil?
+  	return Staff.find id
+  end
 end

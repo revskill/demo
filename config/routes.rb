@@ -2,6 +2,8 @@ Demo::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   root :to => 'admin#index'
+  get '/staffs/:id/password' => 'admin#password', :as => 'password'
+  post '/staffs/:id/password' => 'admin#change_password', :as => 'change_password'
   get '/signin' => 'sessions#new', :as => 'signin'
   post '/signin' => 'sessions#create', :as => 'signedin'
   get '/signout' => 'sessions#destroy', :as => 'signout'

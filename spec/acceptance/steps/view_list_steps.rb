@@ -40,8 +40,8 @@ module ViewListSteps
   end
 
   step 'staff có thể thấy danh sách 50 kết quả người dùng' do 
-    expect(page).to have_content "stt50"
-    expect(page).to_not have_content "stt51"
+    expect(page).to have_content "ふははは"
+    expect(page).to_not have_content "www2"
   end
     
   step 'staff có thể thấy "Trang trước", "Trang sau"' do 

@@ -35,6 +35,8 @@ gem 'mysql2'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'ransack'
+gem 'simple_form'
+gem 'strong_parameters'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
