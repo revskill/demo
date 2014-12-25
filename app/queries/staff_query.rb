@@ -13,4 +13,9 @@ module StaffQuery
   	return nil if id.nil?
   	return Staff.find id
   end
+
+  def self.find_by_token token 
+    return nil if token.nil?
+    return Staff.find_by_token token
+  end
 end

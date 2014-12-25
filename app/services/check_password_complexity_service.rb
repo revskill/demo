@@ -9,7 +9,7 @@ module CheckPasswordComplexityService
   end
 
   def self.has_extra_chars? password
-    password.match(/\~\!\@\#\$\%\^\&\*\(\)\_\+\|\}\{\"/) ? true : false
+    password.match(/[\~\!\@\#\$\%\^\&\*\(\)\_\+\|\}\{\"]/) ? true : false
   end
 
   def self.valid? password

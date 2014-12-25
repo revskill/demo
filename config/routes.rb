@@ -2,11 +2,13 @@ Demo::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   root :to => 'admin#index'
+  get '/modal/:id' => 'admin#modal', :as => 'modal'
+  get '/reset/:id' => 'admin#reset', :as => 'reset'
   get '/staffs/:id/password' => 'admin#password', :as => 'password'
   post '/staffs/:id/password' => 'admin#change_password', :as => 'change_password'
-  get '/signin' => 'sessions#new', :as => 'signin'
-  post '/signin' => 'sessions#create', :as => 'signedin'
-  get '/signout' => 'sessions#destroy', :as => 'signout'
+  get '/login' => 'sessions#new', :as => 'signin'
+  post '/login' => 'sessions#create', :as => 'signedin'
+  get '/logout' => 'sessions#destroy', :as => 'signout'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

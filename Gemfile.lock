@@ -169,6 +169,7 @@ GEM
       json (>= 1.8.0)
     win32-process (0.7.4)
       ffi (>= 1.0.0)
+    wisper (1.6.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -196,3 +197,4 @@ DEPENDENCIES
   strong_parameters
   turnip
   uglifier (>= 1.0.3)
+  wisper

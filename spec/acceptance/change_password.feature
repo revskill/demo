@@ -16,7 +16,7 @@ Tính năng: Đổi mật khẩu
   Tình huống: Mật khẩu phải từ 8 đến 16 ký tự
     Khi staff đăng nhập
   	Và nhấn vào nút đổi mật khẩu của nhân viên đầu tiên
-  	Và điền mật khẩu "123457891234567"
+  	Và điền mật khẩu "12345678912345678"
   	Và nhấn nút "Lưu"
   	Thì báo lỗi "Mật khẩu phải từ 8 đến 16 ký tự"
 
@@ -40,3 +40,10 @@ Tính năng: Đổi mật khẩu
     Và điền mật khẩu "dummabcdef"
     Và nhấn nút "Lưu"
     Thì báo lỗi "Mật khẩu chứa ít nhất 1 chữ, 1 số, 1 ký tự đặc biệt"    
+
+  Tình huống: Mật khẩu hợp lệ
+    Khi staff đăng nhập
+    Và nhấn vào nút đổi mật khẩu của nhân viên đầu tiên
+    Và điền mật khẩu "abc123@#"
+    Và nhấn nút "Lưu"
+    Thì hiển thị thông báo "Mật khẩu đã được cập nhật thành công" 

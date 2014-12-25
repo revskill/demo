@@ -31,6 +31,13 @@ Tính năng: Đổi mật khẩu
     Và điền mật khẩu "dumm"
     Và nhấn nút "Lưu"
     Thì báo lỗi "Mật khẩu chứa ít nhất 1 chữ, 1 số, 1 ký tự đặc biệt" 
+
+  Tình huống: Mật khẩu hợp lệ
+    Khi staff đăng nhập
+    Và nhấn vào nút đổi mật khẩu của nhân viên đầu tiên
+    Và điền mật khẩu "abc123@#"
+    Và nhấn nút "Lưu"
+    Thì hiển thị thông báo "Mật khẩu đã được cập nhật thành công"
 =end
 
 module ChangePasswordSteps
@@ -63,8 +70,8 @@ module ChangePasswordSteps
   end
 
   #
-  step 'điền mật khẩu "123457891234567"' do 
-    fill_in :password, :with => '123457891234567'
+  step 'điền mật khẩu "12345678912345678"' do 
+    fill_in :password, :with => '12345678912345678'
   end
 
   #
@@ -92,5 +99,14 @@ module ChangePasswordSteps
 
   step 'báo lỗi "Mật khẩu chứa ít nhất 1 chữ, 1 số, 1 ký tự đặc biệt"' do 
     expect(page).to have_content "Mật khẩu chứa ít nhất 1 chữ, 1 số, 1 ký tự đặc biệt"
+  end
+
+  #
+  step 'điền mật khẩu "abc123@#"' do 
+    fill_in :password, :with => 'abc123@#'
+  end
+
+  step 'hiển thị thông báo "Mật khẩu đã được cập nhật thành công"' do 
+    expect(page).to have_content 'Mật khẩu đã được cập nhật thành công'
   end
 end

@@ -1,7 +1,7 @@
 <h3><%= t('admin.index.welcome') + "  " + current_staff.staff_name %></h3>
 <%= link_to t('admin.index.logout'), signout_path %>
 <% if flash.keys.any? %>
-  <% [:notice, :error].each do |t| %>
+  <% [:success, :notice, :error].each do |t| %>
     <%= flash[t] %>
   <% end %>
 <% end %>
@@ -65,9 +65,9 @@
 	            <% end %>
 	          </td>
 	          <td>
-	            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+	            <a type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" href="<%= modal_path(staff) %>">
 	              <span class="glyphicon glyphicon-phone" aria-hidden="true"></span><br>
-	            </button>
+	            </a>
 	          </td>
 	          <td>  
 	            <button type="button" class="btn btn-default">
@@ -80,22 +80,7 @@
      <!-- Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel"><strong>iPadリセット　利用者名：</strong></h4>
-            </div>
-            <div class="modal-body">
-              iPadリセット　利用者名：
-              リセットボタンを押下すると、
-              現在登録されているiPadの情報をリセットします。
-              リセット後、新しいiPadでログインすると
-              そのiPadからでのみログイン可能になり
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
-              <button type="button" class="btn btn-primary">リセッ</button>
-            </div>
-          </div>
+           <div class="modal-content">
+           </div>
         </div>
       </div>

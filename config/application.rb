@@ -16,7 +16,8 @@ module Demo
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    config.autoload_paths += %W(#{config.root}/commands #{config.root}/queries #{config.root}/validators #{config.root}/services #{config.root}/extensions)
+    config.autoload_paths += %W(#{config.root}/commands #{config.root}/queries #{config.root}/validators #{config.root}/services #{config.root}/extensions 
+        #{config.root}/publishers #{config.root}/subscribers )
     config.assets.precompile += ["sessions.js", "admin.js"]
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     # Only load the plugins named here, in the order given (default is alphabetical).

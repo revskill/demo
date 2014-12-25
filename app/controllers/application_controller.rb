@@ -11,6 +11,11 @@ class ApplicationController < ActionController::Base
       flash[:error] =
        I18n.t 'application.require_signin.error'
       redirect_to signin_path
+    else
+      if current_staff.one_time_secret.nil? and cookies[current_staff.id.to_s]
+        session[:staff_id] = nil
+        redirect_to signin_path
+      end
     end
   end
   helper_method :require_signin!
