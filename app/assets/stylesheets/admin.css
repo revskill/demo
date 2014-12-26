@@ -9,3 +9,19 @@ body {
       .title_table{
         color: #2c699c;
       }
+      .modal-dialog{
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .badge{
+        background-color: #5cb85c;
+      }
+      .modal.custom .modal-dialog {
+        position: absolute;
+        top: 200px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }

@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   end
   def require_signin!
     if current_staff.nil?
-      flash[:error] =
-       I18n.t 'application.require_signin.error'
+      #flash[:error] =
+       #I18n.t 'application.require_signin.error'
       redirect_to signin_path
     else
       if current_staff.one_time_secret.nil? and cookies[current_staff.id.to_s]
@@ -23,4 +23,17 @@ class ApplicationController < ActionController::Base
     @current_staff ||= StaffQuery.find session[:staff_id] if session[:staff_id]
   end
   helper_method :current_staff
+
+  def require_cookies!
+    if cookies[:test_session].to_s == ''
+      cookies[:test_session] = 'testing'
+      if params[:cookies_enabled].nil?
+        redirect_to :controller => params[:controller],
+                    :action => params[:action],
+                    :cookies_enabled => 'testing'
+      else
+        render :text => '<html><body>You need cookies</body></html>'
+      end
+    end
+  end
 end

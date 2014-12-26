@@ -21,6 +21,7 @@ vi:
     index:
       welcome: "Chào"
       logout: "Đăng xuất"
+      search_result_label: "Kết quả"
     password:
       password_label: "Mật khẩu"
       title: "Đổi mật khẩu"

@@ -7,14 +7,15 @@
 <% end %>
 	<div class="well">
       <form class="form-inline" role="form" action="<%= root_path %>" method="GET">
-
-        <select class="form-control">
-          <option value="one">One</option>
-          <option value="two">Two</option>
-          <option value="three">Three</option>
-          <option value="four">Four</option>
-          <option value="five">Five</option>
-        </select>
+        <div class="form-group">
+          <select class="form-control">
+            <option value="one">One</option>
+            <option value="two">Two</option>
+            <option value="three">Three</option>
+            <option value="four">Four</option>
+            <option value="five">Five</option>
+          </select>
+        </div>
 
 
 
@@ -31,8 +32,10 @@
         </div>
         <button type="submit" class="btn btn-default search_button"><span class="glyphicon glyphicon-search " aria-hidden="true"></span></button>
         <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-
-
+        <% if params[:q].present? %>
+          <label><%= t("admin.index.search_result_label") %>:</label>
+          <label class="badge"><%= @staffs.count %></label>
+        <% end %>
       </form>
     </div>
 
@@ -78,7 +81,7 @@
 	    <% end %>
      </table>
      <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal fade custom" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
            <div class="modal-content">
            </div>

@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_filter :require_cookies!
   def new
     redirect_to root_path and return if current_staff
   end
