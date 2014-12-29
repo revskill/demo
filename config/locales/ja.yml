@@ -1,0 +1,56 @@
+ja:
+  application:
+    header: "BP管理ログイン"
+    require_signin:
+      error: "Bạn cần đăng nhập để thực hiện thao tác này"
+  sessions:
+    new:
+      title: "ログイン"
+      submit: "ログイン"
+      staff_mail_address: "メールアドレス"
+      staff_login_password: "パスワード"
+    create:
+      notice: "Đăng nhập thành công"
+      error: "メールアドレスかパスワードが正しくなって、差入力してください。"
+      nullemail: "メールアドレスを入力してください。"
+      nullpassword: "パスワードを入力してください。"
+      nullemailandpassword: |+
+        メールアドレスかパスワードが正しくなって、差入力してください。
+        パスワードを入力してください。    
+      invalidtoken1: "申し訳ございません。選択されたアカウントには複数のiPadが登録されている為、iPadのリセットはサポート窓口からのみとなります"
+      invalidtoken2: "Mã xác thực không hợp lệ 2"
+      invalidtoken3: "Mã xác thực không hợp lệ 3"
+    destroy:
+      notice: "Đăng xuất thành công"
+  admin:
+    index:
+      welcome: "Chào"
+      logout: "Đăng xuất"
+      search_result_label: "Kết quả"
+    password:
+      password_label: "Mật khẩu"
+      title: "Đổi mật khẩu"
+      save_label: "Lưu"
+      generate_label: "Sinh"
+      show_label: "Hiển thị"
+      hide_label: "Ẩn"
+      back: "Trang chủ"
+      logout: "Đăng xuất"
+    change_password:
+      success: "Mật khẩu đã được cập nhật thành công"
+      error: "Đã có lỗi xảy ra"
+    reset_token:
+      success: "Reset token thành công"
+      error: "Đã có lỗi xảy ra"
+  views:
+    pagination:
+      first: "&laquo; Trang đầu tiên"
+      last: "Trang cuối &raquo;"
+      previous: "&lsaquo; Trang trước"
+      next: "Trang sau &rsaquo;"
+      truncate: "&hellip;"
+  password_validator:
+    wrong_number_of_character_password: "Mật khẩu phải từ 8 đến 16 ký tự"
+    not_latin_password: "Mật khẩu chỉ chứa ký tự Latin"
+    duplicate_old_password: "Mật khẩu mới trùng với mật khẩu cũ"
+    invalid_password: "Mật khẩu chứa ít nhất 1 chữ, 1 số, 1 ký tự đặc biệt"

@@ -1,4 +1,4 @@
-<h3><%= t('admin.index.welcome') + "  " + current_staff.staff_name %></h3>
+<h3><%= t('admin.index.welcome') + "  " + current_user.staff_name %></h3>
 <%= link_to t('admin.index.logout'), signout_path %>
 <% if flash.keys.any? %>
   <% [:success, :notice, :error].each do |t| %>
@@ -61,16 +61,20 @@
 	          <td><%= staff.salon.nil? ? '': staff.salon.salon_name %></td>
 	          <td><%= staff.staff_name %></td>
 	          <td><%= staff.mail_address %></td>
-	          <td>                
+	          <td>  
+            <% if can? :manage, staff %>              
               <%= link_to password_path(staff.id), :class => "cp#{staff.id.to_s} btn btn-primary" do %>
 	              <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
                 <span class="glyphicon-class">Password</span>
 	            <% end %>
+            <% end %>
 	          </td>
 	          <td>
+              <% if can? :manage, staff %>              
 	            <a type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" href="<%= modal_path(staff) %>">
 	              <span class="glyphicon glyphicon-phone" aria-hidden="true"></span><br>
 	            </a>
+              <% end %>
 	          </td>
 	          <td>  
 	            <button type="button" class="btn btn-default">

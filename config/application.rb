@@ -9,7 +9,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Demo
+module BP
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -17,7 +17,7 @@ module Demo
 
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths += %W(#{config.root}/commands #{config.root}/queries #{config.root}/validators #{config.root}/services #{config.root}/extensions 
-        #{config.root}/publishers #{config.root}/subscribers )
+        #{config.root}/concerns )
     config.assets.precompile += ["sessions.js", "admin.js"]
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     # Only load the plugins named here, in the order given (default is alphabetical).

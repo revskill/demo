@@ -1,6 +1,21 @@
 module SignIn
   class InvalidCredential < StandardError
-    def initialize(msg = I18n.t("sessions.create.error"));
+    def initialize(msg = I18n.t("sessions.create.error"))
+      super
+    end
+  end
+  class NuLLEmail < StandardError
+    def initialize(msg = I18n.t("sessions.create.nullemail"))
+      super
+    end
+  end
+  class NullPassword < StandardError
+    def initialize(msg = I18n.t("sessions.create.nullpassword"))
+      super
+    end
+  end
+  class NullEmailAndPassword < StandardError
+    def initialize(msg = I18n.t("sessions.create.nullemailandpassword"))
       super
     end
   end
@@ -21,7 +36,9 @@ module SignIn
   end
   
   def self.complete!(email, password, cookies, session, flash)
-    raise InvalidCredential if password.nil? or email.nil?
+    raise NuLLEmail if !email.present? and password.present?
+    raise NullPassword if email.present? and !password.present?
+    raise NullEmailAndPassword if !email.present? and !password.present?
     staff = Staff.where(:mail_address => email).first    
     raise InvalidCredential if staff.nil? or (staff and staff.login_password != password)
     raise InvalidToken1 if cookies[staff.id.to_s].nil? and staff.one_time_secret.present?

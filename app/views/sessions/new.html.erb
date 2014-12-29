@@ -1,9 +1,9 @@
 <h1><%= t("sessions.new.title") %></h1>
 <% if flash.keys.any? %>
-  <% [:notice, :error].each do |t| %>
+  <% [:notice, :danger].each do |t| %>
     <% if flash[t] %>
-      <div class="alert alert-success" role="alert">
-        <%= flash[t] %>
+      <div class="alert alert-<%= t %>" role="alert">
+        <%= raw flash[t].gsub("\n","<br/>") %>
       </div>
     <% end %>
   <% end %>

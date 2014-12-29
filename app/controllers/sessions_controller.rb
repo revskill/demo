@@ -1,22 +1,15 @@
 class SessionsController < ApplicationController
-  before_filter :require_cookies!
+  include SessionsConcern
+  
   def new
-    redirect_to root_path and return if current_staff
+    render_login current_user
   end
 
   def create
-    begin    
-      SignIn.complete! params[:signin][:staff_mail_address], params[:signin][:staff_login_password], cookies, session, flash 
-      redirect_to root_url
-    rescue StandardError => e
-      flash[:error] = e.message
-      render :new
-    end
+    login params, cookies, session, flash
   end
 
   def destroy    
-    session[:staff_id] = nil
-    flash[:notice] = I18n.t "sessions.destroy.notice"
-    redirect_to signin_url
+    logout session, flash
   end
 end

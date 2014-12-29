@@ -38,6 +38,7 @@ gem 'ransack'
 gem 'simple_form'
 gem 'strong_parameters'
 gem 'wisper'
+gem 'draper', '~> 1.3'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
