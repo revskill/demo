@@ -7,7 +7,7 @@ class AdminController < ApplicationController
   end
 
   def password
-  	render_password_view params, StaffQuery
+    render_password_view params, StaffQuery
   end
 
   def change_password
