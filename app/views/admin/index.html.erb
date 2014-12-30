@@ -8,12 +8,8 @@
 	<div class="well">
       <form class="form-inline" role="form" action="<%= root_path %>" method="GET">
         <div class="form-group">
-          <select class="form-control">
-            <option value="one">One</option>
-            <option value="two">Two</option>
-            <option value="three">Three</option>
-            <option value="four">Four</option>
-            <option value="five">Five</option>
+          <select class="form-control" name="q[role_id_eq]">
+            <%= options_for_select([['管理者', 100], ['利用者', 102]], @role_id) %>
           </select>
         </div>
 
@@ -23,15 +19,15 @@
           <div class="input-group">
             <label class="sr-only" for="q_staff_name_cont">Email address</label>
 
-            <input type="text" class="form-control" id="q_staff_name_cont" name="q[staff_name_cont]" placeholder="Name">
+            <input type="text" class="form-control" id="q_staff_name_cont" name="q[staff_name_cont]" placeholder="Name" value="<%= @staff_name %>"></input>
           </div>
         </div>
         <div class="form-group">
           <label class="sr-only" for="q_mail_address_cont">Password</label>
-          <input type="text" class="form-control" id="q_mail_address_cont" name="q[mail_address_cont]" placeholder="Mail">
+          <input type="text" class="form-control" id="q_mail_address_cont" name="q[mail_address_cont]" placeholder="Mail" value="<%= @mail_address %>"></input>
         </div>
         <button type="submit" class="btn btn-default search_button"><span class="glyphicon glyphicon-search " aria-hidden="true"></span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+        <a href="/" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
         <% if params[:q].present? %>
           <label><%= t("admin.index.search_result_label") %>:</label>
           <label class="badge"><%= @staffs.count %></label>

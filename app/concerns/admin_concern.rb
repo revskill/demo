@@ -8,6 +8,11 @@ module AdminConcern
   def search(params, query_klass)
     authorize! :read, :all
     @search, @staffs = query_klass.search params[:q], params[:page]
+    if params[:q]
+      @role_id = params[:q][:role_id_eq]
+      @staff_name = params[:q][:staff_name_cont]
+      @mail_address = params[:q][:mail_address_cont]
+    end
   end
 
   def render_password_view(params, query_klass)
@@ -48,7 +53,7 @@ module AdminConcern
       @staff = staff_query.find(params[:id])
       authorize! :manage, @staff
       reset_staff_token.do! @staff, flash      
-      redirect_to session[:my_previouse_url]
+      redirect_to session[:my_previouse_url] || root_path
     rescue Exception => e
       flash[:error] = I18n.t("admin.reset_token.error")
       redirect_to root_path
