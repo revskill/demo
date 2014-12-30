@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    login params, cookies, session, flash
+    login SignIn, params, cookies, session, flash
   end
 
   def destroy    

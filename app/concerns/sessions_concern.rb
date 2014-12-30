@@ -15,9 +15,9 @@ module SessionsConcern
     redirect_to signin_url
   end
 
-  def login(params, cookies, session, flash)
+  def login(sign_in_command, params, cookies, session, flash)
   	begin    
-      SignIn.complete! params[:signin][:staff_mail_address], params[:signin][:staff_login_password], cookies, session, flash 
+      sign_in_command.complete! params[:signin][:staff_mail_address], params[:signin][:staff_login_password], cookies, session, flash 
       redirect_to root_url
     rescue StandardError => e
       flash[:danger] = e.message
